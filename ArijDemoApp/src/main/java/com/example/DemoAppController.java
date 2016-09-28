@@ -12,7 +12,7 @@ import java.util.Random;
  * Created by Arij Hussain on 9/19/2016.
  */
 @RestController
-public class HelloController {
+public class DemoAppController {
     @RequestMapping(value = "/ipaddress", method = RequestMethod.GET,
             produces = "application/json")
     public String getIPMethod() throws UnknownHostException {
@@ -29,5 +29,11 @@ public class HelloController {
              randomInt = random.nextInt(100);
         }
         return  "Random Numner : "+randomInt.toString();
+    }
+
+    @RequestMapping(value = "/", method = RequestMethod.GET,
+            produces = "application/json")
+    public String getStarted(){
+        return  "Started Okay!!";
     }
 }
